@@ -8,12 +8,12 @@
 - The `null!` suppresses compiler warnings while keeping the property uninitialized
 
 ## Model Configuration
-- **Prefer attribute annotations over Fluent API** for entity configuration
+- **Prefer attribute annotations over Fluent API** for entity configuration, only use Fluent API for complex scenarios that cannot be expressed with attributes
 - **Do not add configuration that is implicitly implied** by EF Core conventions:
   - Primary keys (properties named `Id` or `<EntityName>Id`)
   - Foreign keys (properties matching navigation property names)
   - Navigation relationships (automatically inferred from navigation properties)
-- Only use Fluent API for complex scenarios that cannot be expressed with attributes
+  - Cascade delete for required relationships (default behavior)
 
 ### Model Configuration Example
 ```csharp
